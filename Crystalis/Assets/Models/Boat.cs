@@ -4,6 +4,8 @@ using System.Collections;
 public class Boat : MonoBehaviour {
     private Transform camera;
 
+    private Vector3 lastPos;
+
 	// Use this for initialization
 	void Start () {
         camera = GetComponentInChildren<Camera>().transform;
@@ -16,6 +18,8 @@ public class Boat : MonoBehaviour {
             
             
             Vector3 pos = transform.position;
+            lastPos = pos;
+            
             pos.y = hit.point.y;
             transform.position = pos + Vector3.up * .3f;
             Vector3 tilt = hit.normal;//Vector3.RotateTowards(Vector3.up, hit.normal, Vector3.Angle(Vector3.up, hit.normal) * Mathf.Deg2Rad * 0.6f, 0);
@@ -32,9 +36,23 @@ public class Boat : MonoBehaviour {
 
             transform.Translate(transform.forward * vel * 3 * d * Time.deltaTime, Space.World);
             transform.Rotate(new Vector3(0, rot * Time.deltaTime * 30, 0), Space.Self);
-
+            if(hit.transform.gameObject.layer != 4)
+            {
+                transform.position = lastPos;
+            }
             camera.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+            camera.transform.forward = transform.position - camera.position;
         }
 
+        CameraControl();
+    }
+
+    void CameraControl() {
+        camera.position = Vector3.Lerp(camera.position, transform.position - camera.position, 0.02f);
+        camera.position = Vector3.Lerp(camera.position, transform.position + 5 * (-2 * transform.forward + transform.up) + Input.GetAxis("Vertical") * transform.right, 0.2f);
+        if(camera.position.y < transform.position.y + 1)
+        {
+            camera.position = Vector3.Lerp(camera.position, camera.position + Vector3.up, 0.7f);
+        }
     }
 }
