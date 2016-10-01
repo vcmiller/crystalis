@@ -36,7 +36,7 @@ public class Boat : MonoBehaviour {
             float rot = Input.GetAxis("Horizontal") * 30;
             float vel = Input.GetAxis("Vertical") * 3;
             
-            transform.Translate(transform.forward * (vel + 3) * d * Time.deltaTime, Space.World);
+            transform.Translate(transform.forward * (vel + 8) * d * Time.deltaTime, Space.World);
             transform.Rotate(new Vector3(0, rot * Time.deltaTime , 0), Space.Self);
        
             
