@@ -1,17 +1,63 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 24d84e5a913000847834f8ab92ea9d52
-timeCreated: 1475293693
-=======
-guid: 9ed126f137368424e93d0f0000844aa4
-timeCreated: 1475293621
->>>>>>> f84d6355a256d3cabad39e4e2839596b1433e44f
+guid: e12827aef5423ca47871114ce5041fe0
+timeCreated: 1475293722
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: arm_l
+    100002: arm_r
+    100004: Armature
+    100006: chest
+    100008: Cube
+    100010: foot_l
+    100012: foot_r
+    100014: hand_l
+    100016: hand_r
+    100018: head
+    100020: leg2_l
+    100022: leg2_r
+    100024: leg_l
+    100026: leg_r
+    100028: neck
+    100030: //RootNode
+    100032: root
+    100034: tail1
+    100036: tail2
+    100038: tail3
+    100040: tail4
+    100042: tail5
+    100044: thigh_l
+    100046: thigh_r
+    400000: arm_l
+    400002: arm_r
+    400004: Armature
+    400006: chest
+    400008: Cube
+    400010: foot_l
+    400012: foot_r
+    400014: hand_l
+    400016: hand_r
+    400018: head
+    400020: leg2_l
+    400022: leg2_r
+    400024: leg_l
+    400026: leg_r
+    400028: neck
+    400030: //RootNode
+    400032: root
+    400034: tail1
+    400036: tail2
+    400038: tail3
+    400040: tail4
+    400042: tail5
+    400044: thigh_l
+    400046: thigh_r
+    4300000: Cube
+    7400000: Default Take
+    7400002: ArmatureAction
+    9500000: //RootNode
+    13700000: Cube
   materials:
     importMaterials: 1
     materialName: 0
@@ -70,7 +116,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

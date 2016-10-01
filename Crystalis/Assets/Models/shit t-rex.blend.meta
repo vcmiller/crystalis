@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 24d84e5a913000847834f8ab92ea9d52
-timeCreated: 1475293693
-=======
-guid: 9ed126f137368424e93d0f0000844aa4
-timeCreated: 1475293621
->>>>>>> f84d6355a256d3cabad39e4e2839596b1433e44f
+guid: 846e25db77630574c8c9e3eb16a472d8
+timeCreated: 1475293721
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -70,7 +70,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
