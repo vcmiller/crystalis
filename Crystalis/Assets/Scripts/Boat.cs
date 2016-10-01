@@ -42,11 +42,15 @@ public class Boat : MonoBehaviour {
             
         } else {
             RaycastHit hit2;
-            if (Physics.Raycast(transform.position - transform.forward + Vector3.up * 4, Vector3.down, out hit2))   {
-                transform.position = Vector3.Lerp(transform.position, transform.position - transform.forward, 0.05f);
-            } else if(Physics.Raycast(transform.position + transform.forward + Vector3.up * 4, Vector3.down, out hit2)) {
-                transform.position = Vector3.Lerp(transform.position, transform.position + transform.forward, 0.05f);
-            }
+            Vector3[] dirs = { transform.forward, -transform.forward, transform.right, -transform.right };
+            for(int i =0; i < dirs.Length; i++)
+            {
+                if (Physics.Raycast(transform.position + dirs[i] + Vector3.up * 4, Vector3.down, out hit2))
+                {
+                    transform.position = Vector3.Lerp(transform.position, transform.position + dirs[i], 0.05f);
+                    break;
+                }
+            } 
         }
 
       //  CameraControl();
