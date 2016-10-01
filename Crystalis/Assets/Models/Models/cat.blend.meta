@@ -1,0 +1,130 @@
+fileFormatVersion: 2
+guid: 1689722732c51cd40a119d5029b9e96b
+timeCreated: 1448223641
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Mball
+    100004: Surface
+    100006: Surface_001
+    100008: Surface_002
+    100010: Surface_003
+    100012: Surface_004
+    100014: SurfPatch_000
+    100016: SurfPatch_001
+    100018: SurfSphere
+    100020: SurfSphere_001
+    100022: SurfSphere_002
+    400000: //RootNode
+    400002: Mball
+    400004: Surface
+    400006: Surface_001
+    400008: Surface_002
+    400010: Surface_003
+    400012: Surface_004
+    400014: SurfPatch_000
+    400016: SurfPatch_001
+    400018: SurfSphere
+    400020: SurfSphere_001
+    400022: SurfSphere_002
+    2300000: Mball
+    2300002: Surface
+    2300004: Surface_001
+    2300006: Surface_002
+    2300008: Surface_003
+    2300010: Surface_004
+    2300012: SurfPatch_000
+    2300014: SurfPatch_001
+    2300016: SurfSphere
+    2300018: SurfSphere_001
+    2300020: SurfSphere_002
+    3300000: Mball
+    3300002: Surface
+    3300004: Surface_001
+    3300006: Surface_002
+    3300008: Surface_003
+    3300010: Surface_004
+    3300012: SurfPatch_000
+    3300014: SurfPatch_001
+    3300016: SurfSphere
+    3300018: SurfSphere_001
+    3300020: SurfSphere_002
+    4300000: Surface_004
+    4300002: SurfSphere_001
+    4300004: Surface
+    4300006: SurfSphere
+    4300008: Mball
+    4300010: SurfPatch_001
+    4300012: Surface_001
+    4300014: Surface_002
+    4300016: Surface_003
+    4300018: SurfPatch_000
+    4300020: SurfSphere_002
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

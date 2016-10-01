@@ -14,6 +14,7 @@ public class GlobalController : MonoBehaviour {
     public Color waterStartColor;
     public Color waterColor;
 
+    public float timeTilEnd;
     bool end;
 
     private Light[] lights;
@@ -43,7 +44,12 @@ public class GlobalController : MonoBehaviour {
 
     void Update() {
         skybox.SetFloat("_Rotation", Time.time * 5);
-        
+
+        timeTilEnd -= Time.deltaTime;
+        if(timeTilEnd < 0)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<FuckArtScript>().End();
+        }
 
         foreach (Light light in lights) {
             light.intensity = starExp * .7f;

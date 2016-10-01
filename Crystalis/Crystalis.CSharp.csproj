@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\AIBase.cs" />
     <Compile Include="Assets\Scripts\Boat.cs" />
     <Compile Include="Assets\Scripts\BoatScript.cs" />
+    <Compile Include="Assets\Scripts\FuckArtScript.cs" />
     <Compile Include="Assets\Scripts\GlobalController.cs" />
     <Compile Include="Assets\Scripts\OpenSimplexNoise.cs" />
     <Compile Include="Assets\Scripts\OpenSimplexNoiseTileable3D.cs" />
