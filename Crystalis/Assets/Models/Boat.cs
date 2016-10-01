@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class Boat : MonoBehaviour {
+    private Transform camera;
 
 	// Use this for initialization
 	void Start () {
-	
+        camera = GetComponentInChildren<Camera>().transform;
 	}
 	
 	// Update is called once per frame
@@ -16,10 +17,24 @@ public class Boat : MonoBehaviour {
             
             Vector3 pos = transform.position;
             pos.y = hit.point.y;
-            transform.position = pos;
-            transform.up = Vector3.RotateTowards(transform.up, hit.normal, Time.deltaTime * .15f, 0);
+            transform.position = pos + Vector3.up * .3f;
+            Vector3 tilt = hit.normal;//Vector3.RotateTowards(Vector3.up, hit.normal, Vector3.Angle(Vector3.up, hit.normal) * Mathf.Deg2Rad * 0.6f, 0);
+            transform.Rotate(Vector3.Cross(transform.up, tilt).normalized, Mathf.Min(Vector3.Angle(transform.up, tilt), Time.deltaTime * 10f), Space.World);
+
+            Vector3 fwd = transform.forward;
+            fwd.y = 0;
+            fwd = fwd.normalized;
+            float d = Vector3.Dot(transform.up, fwd) + .5f;
+            d = Mathf.Clamp(d, 0.2f, 1.3f);
+
+            float rot = Input.GetAxis("Horizontal");
+            float vel = Input.GetAxis("Vertical");
+
+            transform.Translate(transform.forward * vel * 3 * d * Time.deltaTime, Space.World);
+            transform.Rotate(new Vector3(0, rot * Time.deltaTime * 30, 0), Space.Self);
+
+            camera.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
         }
 
-
-	}
+    }
 }
