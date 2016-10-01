@@ -15,10 +15,12 @@ public class Boat : MonoBehaviour {
 	void Update () {
         RaycastHit hit;
         if (Physics.Raycast(transform.position + Vector3.up * 4, Vector3.down, out hit)) {//Physics.BoxCast(transform.position + Vector3.up * 4, new Vector3(.6f, .2f, 1.5f), Vector3.down, out hit, Quaternion.identity)) {
-            
-            
+            if (hit.transform.gameObject.layer != 4)
+            {
+                return;
+            }
+
             Vector3 pos = transform.position;
-            lastPos = pos;
             
             pos.y = hit.point.y;
             transform.position = pos + Vector3.up * .3f;
@@ -31,28 +33,35 @@ public class Boat : MonoBehaviour {
             float d = Vector3.Dot(transform.up, fwd) + .5f;
             d = Mathf.Clamp(d, 0.2f, 1.3f);
 
-            float rot = Input.GetAxis("Horizontal");
-            float vel = Input.GetAxis("Vertical");
+            float rot = Input.GetAxis("Horizontal") * 30;
+            float vel = Input.GetAxis("Vertical") * 5;
 
-            transform.Translate(transform.forward * vel * 3 * d * Time.deltaTime, Space.World);
-            transform.Rotate(new Vector3(0, rot * Time.deltaTime * 30, 0), Space.Self);
-            if(hit.transform.gameObject.layer != 4)
-            {
-                transform.position = lastPos;
-            }
-            //camera.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+            transform.Translate(transform.forward * vel * d * Time.deltaTime, Space.World);
+            transform.Rotate(new Vector3(0, rot * Time.deltaTime , 0), Space.Self);
+       
+
             camera.transform.forward = transform.position - camera.position;
+        }else
+        {
+            RaycastHit hit2;
+            if (Physics.Raycast(transform.position - transform.forward + Vector3.up * 4, Vector3.down, out hit2))
+            {
+                transform.position = Vector3.Lerp(transform.position, transform.position - transform.forward, 0.05f);
+            }else if(Physics.Raycast(transform.position + transform.forward + Vector3.up * 4, Vector3.down, out hit2))
+            {
+                transform.position = Vector3.Lerp(transform.position, transform.position + transform.forward, 0.05f);
+            }
         }
 
-        //CameraControl();
+      //  CameraControl();
     }
 
     void CameraControl() {
         camera.position = Vector3.Lerp(camera.position, transform.position - camera.position, 0.02f);
-        camera.position = Vector3.Lerp(camera.position, transform.position + 5 * (-2 * transform.forward + transform.up) + Input.GetAxis("Vertical") * transform.right, 0.2f);
+        camera.position = Vector3.Lerp(camera.position, transform.position + 5 * (-2 * transform.forward + transform.up) + Input.GetAxis("Vertical") * transform.right, 0.12f);
         if(camera.position.y < transform.position.y + 1)
         {
-            camera.position = Vector3.Lerp(camera.position, camera.position + Vector3.up, 0.7f);
+            camera.position = Vector3.Lerp(camera.position, camera.position + Vector3.up, 0.07f);
         }
     }
 }
