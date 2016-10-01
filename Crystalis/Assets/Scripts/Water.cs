@@ -18,6 +18,8 @@ public class Water : MonoBehaviour {
     const int repeat2 = 1;
     const float ratio2 = 6.0f / 20.0f;
 
+    public static float waterRoughness = 0.0f;
+
     private static bool meshUpdated = false;
 
     private void updateMesh() {
@@ -28,8 +30,12 @@ public class Water : MonoBehaviour {
 
             //v.y = sampleNoise(v.x + 10, Time.time * timeScale, v.y + 10);
 
-            v.y = (float)noise.eval(v.x * ratio, Time.time * timeScale, v.z * ratio) * noiseScale;
-            v.y += (float)noise2.eval(v.x * ratio2, Time.time * timeScale * 0.25f, v.z * ratio2) * noiseScale * 2;
+            float ts = timeScale;
+
+            //ts += Mathf.Clamp01(1 - waterRoughness);
+
+            v.y = (float)noise.eval(v.x * ratio, Time.time * ts, v.z * ratio) * noiseScale * waterRoughness;
+            v.y += (float)noise2.eval(v.x * ratio2, Time.time * ts * 0.25f, v.z * ratio2) * noiseScale * 2 * waterRoughness;
             verts[i] = v;
         }
         mesh.vertices = verts;
