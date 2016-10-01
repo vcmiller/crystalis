@@ -40,11 +40,11 @@ public class Boat : MonoBehaviour {
             {
                 transform.position = lastPos;
             }
-            camera.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+            //camera.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
             camera.transform.forward = transform.position - camera.position;
         }
 
-        CameraControl();
+        //CameraControl();
     }
 
     void CameraControl() {
