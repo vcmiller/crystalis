@@ -6,12 +6,49 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: arm1_l
+    100004: arm1_r
+    100006: arm2_l
+    100008: arm2_r
+    100010: Armature
+    100012: chest
+    100014: Cube
+    100016: foot_l
+    100018: foot_r
+    100020: head
+    100022: leg1_l
+    100024: leg1_r
+    100026: leg2_l
+    100028: leg2_r
+    100030: neck
+    100032: root
+    100034: torso1
     400000: //RootNode
+    400002: arm1_l
+    400004: arm1_r
+    400006: arm2_l
+    400008: arm2_r
+    400010: Armature
+    400012: chest
+    400014: Cube
+    400016: foot_l
+    400018: foot_r
+    400020: head
+    400022: leg1_l
+    400024: leg1_r
+    400026: leg2_l
+    400028: leg2_r
+    400030: neck
+    400032: root
+    400034: torso1
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
     7400000: Default Take
+    7400002: ArmatureAction
+    7400004: ArmatureAction0
     9500000: //RootNode
+    13700000: Cube
   materials:
     importMaterials: 1
     materialName: 0
@@ -32,7 +69,135 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: ArmatureAction0
+      takeName: ArmatureAction
+      firstFrame: -1
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/root
+        weight: 1
+      - path: Armature/root/leg1_l
+        weight: 1
+      - path: Armature/root/leg1_l/leg2_l
+        weight: 1
+      - path: Armature/root/leg1_l/leg2_l/foot_l
+        weight: 1
+      - path: Armature/root/leg1_r
+        weight: 1
+      - path: Armature/root/leg1_r/leg2_r
+        weight: 1
+      - path: Armature/root/leg1_r/leg2_r/foot_r
+        weight: 1
+      - path: Armature/root/torso1
+        weight: 1
+      - path: Armature/root/torso1/chest
+        weight: 1
+      - path: Armature/root/torso1/chest/arm1_l
+        weight: 1
+      - path: Armature/root/torso1/chest/arm1_l/arm2_l
+        weight: 1
+      - path: Armature/root/torso1/chest/arm1_r
+        weight: 1
+      - path: Armature/root/torso1/chest/arm1_r/arm2_r
+        weight: 1
+      - path: Armature/root/torso1/chest/neck
+        weight: 1
+      - path: Armature/root/torso1/chest/neck/head
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ArmatureAction
+      takeName: ArmatureAction
+      firstFrame: -1
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/root
+        weight: 1
+      - path: Armature/root/leg1_l
+        weight: 1
+      - path: Armature/root/leg1_l/leg2_l
+        weight: 1
+      - path: Armature/root/leg1_l/leg2_l/foot_l
+        weight: 1
+      - path: Armature/root/leg1_r
+        weight: 1
+      - path: Armature/root/leg1_r/leg2_r
+        weight: 1
+      - path: Armature/root/leg1_r/leg2_r/foot_r
+        weight: 1
+      - path: Armature/root/torso1
+        weight: 1
+      - path: Armature/root/torso1/chest
+        weight: 1
+      - path: Armature/root/torso1/chest/arm1_l
+        weight: 1
+      - path: Armature/root/torso1/chest/arm1_l/arm2_l
+        weight: 1
+      - path: Armature/root/torso1/chest/arm1_r
+        weight: 1
+      - path: Armature/root/torso1/chest/arm1_r/arm2_r
+        weight: 1
+      - path: Armature/root/torso1/chest/neck
+        weight: 1
+      - path: Armature/root/torso1/chest/neck/head
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -43,7 +208,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
+    optimizeMeshForGPU: 0
     keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
