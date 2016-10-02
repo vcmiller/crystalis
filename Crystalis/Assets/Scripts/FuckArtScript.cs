@@ -5,6 +5,7 @@ public class FuckArtScript : MonoBehaviour {
 
     Vector3 ogPos;
     bool end;
+    public AudioClip replacementMusic;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,13 @@ public class FuckArtScript : MonoBehaviour {
 
     public void End()
     {
-        end = true;
+        AudioSource src = FindObjectOfType<AudioSource>();
+        if (src.clip != replacementMusic) {
+            src.Stop();
+            src.clip = replacementMusic;
+            src.Play();
+            Water.waterRoughness = 1.0f;
+            end = true;
+        }
     }
 }
