@@ -2,9 +2,8 @@
 using System.Collections;
 
 public class MainMenu : MonoBehaviour {
-    public string levelLoad = "Scene";
 
-	public void Play() {
+	public void Play(string levelLoad) {
         Application.LoadLevel(levelLoad);
     }
 
