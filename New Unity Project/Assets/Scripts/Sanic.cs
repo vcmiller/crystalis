@@ -3,16 +3,10 @@ using System.Collections;
 
 public class Sanic : Player {
     protected override void UseAbility1() {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 3)) {
-            Rigidbody otherBody = hit.collider.GetComponent<Rigidbody>();
-            if (otherBody != null) {
-                otherBody.AddForce(transform.forward * 30, ForceMode.VelocityChange);
-            }
-        }
+        transform.position = new Vector3(Random.Range(-25, 25), Random.Range(0, 40), 0);
     }
 
     protected override void UseAbility2() {
-        rb.AddTorque(0, 0, 10, ForceMode.VelocityChange);
+        rb.AddTorque(0, 0, 30, ForceMode.VelocityChange);
     }
 }

@@ -2,17 +2,19 @@
 using System.Collections;
 
 public class Shrek : Player {
+    public GameObject explosion;
     protected override void UseAbility1() {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 3)) {
-            Rigidbody otherBody = hit.collider.GetComponent<Rigidbody>();
-            if (otherBody != null) {
-                otherBody.AddForce(transform.forward * 30, ForceMode.VelocityChange);
-            }
-        }
+        Instantiate(explosion, transform.position, transform.rotation);
     }
 
     protected override void UseAbility2() {
+        GetComponent<AudioSource>().Play();
         rb.AddTorque(0, 0, 10, ForceMode.VelocityChange);
+
+        foreach (Player p in FindObjectsOfType<Player>()) {
+            if (p != this) {
+                transform.position = p.transform.position - p.transform.forward * 3;
+            }
+        }
     }
 }

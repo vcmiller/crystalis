@@ -2,24 +2,30 @@
 using System.Collections;
 
 public class Spooks : Player {
-    public AudioClip doot;
+    public MeshRenderer eye1;
+    public MeshRenderer eye2;
+
     protected override void UseAbility1() {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 3)) {
-            Rigidbody otherBody = hit.collider.GetComponent<Rigidbody>();
-            if (otherBody != null) {
-                otherBody.AddForce(transform.forward * 30, ForceMode.VelocityChange);
-            }
-        }
+        eye1.enabled = true;
+        eye2.enabled = true;
+
+        Invoke("DisableEyes", 4);
+        rb.mass = 3;
     }
 
     protected override void UseAbility2() {
-        AudioSource.PlayClipAtPoint(doot, Camera.main.transform.position);
+        GetComponent<AudioSource>().Play();
 
         foreach (Player p in FindObjectsOfType<Player>()) {
             if (p != this) {
                 p.GetComponent<Rigidbody>().AddExplosionForce(100, transform.position, 5, 0, ForceMode.VelocityChange);
             }
         }
+    }
+
+    public void DisableEyes() {
+        eye1.enabled = false;
+        eye2.enabled = false;
+        rb.mass = 1;
     }
 }

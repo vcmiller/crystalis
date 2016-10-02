@@ -30,7 +30,7 @@ public class Endscreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (Input.GetKeyDown(KeyCode.R) && gameOver) {
+	    if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Restart")) {
             Time.timeScale = 1.0f;
             Application.LoadLevel(Application.loadedLevel);
         }

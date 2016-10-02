@@ -20,7 +20,7 @@ public class CameraScript : MonoBehaviour {
             v.x = a.x;
             v.y = a.y;
             v.z = -Mathf.Max(Vector3.Distance(players[0].transform.position, players[1].transform.position), 5);
-            transform.position = v;
+            transform.position = Vector3.MoveTowards(transform.position, v, Time.deltaTime * 20);
         }
 	}
 }
