@@ -17,10 +17,15 @@ public abstract class Player : MonoBehaviour {
     public int index;
     public string axis;
 
+    public float alignd = 1;
+
     public Image ability1view;
     public Image ability2view;
 
     public Image arrow;
+
+    protected Player other;
+    private float angleY;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +34,16 @@ public abstract class Player : MonoBehaviour {
         startRot = transform.rotation;
         livesCounter.text = "Lives: " + lives;
         rb.maxAngularVelocity = 100;
+
+        Player[] players = FindObjectsOfType<Player>();
+        foreach (Player player in players)  {
+            if (player != this)   {
+                other = player;
+                break;
+            }
+        }
+
+        angleY = transform.eulerAngles.y;
     }
 
     // Update is called once per frame
@@ -66,11 +81,28 @@ public abstract class Player : MonoBehaviour {
         v.z = 0;
         transform.position = v;
 
+        //Vector3 a = transform.eulerAngles;
+        //a.y = angleY;
+        //a.z = 0;
+        //transform.eulerAngles = a;
+
         if (transform.position.y < -4) {
             die();
         }
 
         UpdateArrow();
+
+        Vector3 toOther = other.transform.position - transform.position;
+
+        if (toOther.sqrMagnitude < 25 * 25)
+        {
+            float d = Vector3.Dot(rb.velocity, toOther.normalized);
+            if (d > .5)
+            {
+                Vector3 toOtherV = toOther.normalized * rb.velocity.magnitude;
+                rb.velocity = Vector3.Slerp(rb.velocity, toOtherV, Time.deltaTime * alignd);
+            }
+        }
 	}
 
     private void die() {
@@ -83,15 +115,10 @@ public abstract class Player : MonoBehaviour {
         lives--;
         livesCounter.text = "Lives: " + lives;
 
-        if (lives <= 0) {
-            Player[] players = FindObjectsOfType<Player>();
-            foreach (Player player in players) {
-                if (player != this) {
-                    FindObjectOfType<Endscreen>().setOver(player.index, index);
-                    return;
-                }
-            }
+        if (lives <= 0)   {
+            FindObjectOfType<Endscreen>().setOver(other.index, index);
         }
+        return;
     }
 
     void UpdateArrow() {

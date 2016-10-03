@@ -5,10 +5,10 @@ using System;
 public class Harambe : Player {
     protected override void UseAbility1() {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 3)) {
+        if (Physics.SphereCast(transform.position, 2.0f, other.transform.position - transform.position, out hit, 4)) {
             Rigidbody otherBody = hit.collider.GetComponent<Rigidbody>();
             if (otherBody != null) {
-                otherBody.AddForce(transform.forward * 30, ForceMode.VelocityChange);
+                otherBody.AddForce((transform.forward + Vector3.up * 0.2f) * 30, ForceMode.VelocityChange);
             }
         }
     }

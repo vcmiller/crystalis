@@ -10,7 +10,7 @@ public class Spooks : Player {
         eye2.enabled = true;
 
         Invoke("DisableEyes", 4);
-        rb.mass = 3;
+        rb.mass = 2;
     }
 
     protected override void UseAbility2() {
